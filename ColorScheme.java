@@ -1,9 +1,7 @@
 /*  
- *  This interface is used by FractalGenerator to make the generation
- *  of fractals (on the complex plane) more general. New fractals can
- *  be drawn by implementing this interface.
+ *  This interface is used by FractalGenerator to set the color scheme.
  *
- *  Copyright (C) 2003-2015 Christopher Cowan
+ *  Copyright (C) 2015 Christopher Cowan
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -21,17 +19,8 @@
  *
  */
 
-public interface Fractal {
-
-    // This is called before an iteration is about to begin.
-    // The coordinates where on the complex plane the iteration
-    // is taking place are passed to it. The default color is
-    // then passed back to the caller.
-    public int initializeIteration(double re, double im);
-
-    // This is called to preform an iteration caclulation.
-    public void iterationCalculation();
-
-    // Returns true if the iteration is to stop.
-    public boolean iterationStop();
+public interface ColorScheme {
+    // If the iteration stops before reaching the maximum iteration
+    // value, then this is called to get the color for the point.
+    public int getColor(int itr);
 }

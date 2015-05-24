@@ -1,10 +1,8 @@
 /*  
- *  $Id: JuliaSet.java,v 1.2 2003/10/15 00:50:37 christophercowan Exp $
- *
  *  Implementation of the interface Fractal the calculates
  *  a Julia set.
  *
- *  Copyright (C) 2003 Christopher Cowan
+ *  Copyright (C) 2003-2015 Christopher Cowan
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,17 +18,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *  Version: $Revision: 1.2 $
- *
- *  Revision History:
- *  $Log: JuliaSet.java,v $
- *  Revision 1.2  2003/10/15 00:50:37  christophercowan
- *  Modified some of the member varible names and made
- *  bound modifiable.
- *
- *  Revision 1.1  2003/09/26 21:07:16  christophercowan
- *  Initial revision
- *
  */
 
 public class JuliaSet implements Fractal {
@@ -40,8 +27,7 @@ public class JuliaSet implements Fractal {
     private double re, im;
     private double reSq, imSq;
 
-    public JuliaSet(double cre, double cim, int bound)
-    {
+    public JuliaSet(double cre, double cim, int bound) {
         this.cre = cre;
         this.cim = cim;
 	this.bound = bound;
@@ -79,16 +65,4 @@ public class JuliaSet implements Fractal {
     public boolean iterationStop() {
         return reSq + imSq > bound;
     }
-
-    public int getColor(int itr) {
-        double angle = 0.2 * itr;
-
-        int red = 100;
-
-        int green =(int) (64 * (Math.cos(angle) + 1)) + 50;
-
-        int blue = (int) (64 * (Math.sin(angle) + 1)) + 50;
-
-        return PixelBuffer.rgb(red, green, blue);
-    }    
 }

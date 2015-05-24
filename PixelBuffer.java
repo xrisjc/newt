@@ -1,6 +1,4 @@
 /*  
- *  $Id: PixelBuffer.java,v 1.1 2003/09/25 01:25:02 christophercowan Exp $
- *
  *  This class holds a buffer of pixels. It creates a 
  *  MemoryImageSource object so that an Image object
  *  can be made using the pixel values in the buffer.
@@ -20,13 +18,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- *  Version: $Revision: 1.1 $
- *
- *  Revision History:
- *  $Log: PixelBuffer.java,v $
- *  Revision 1.1  2003/09/25 01:25:02  christophercowan
- *  Initial revision
  *
  */
 import java.awt.*;
@@ -68,7 +59,7 @@ public class PixelBuffer {
 
     // updates MemoryImageSource object if some pixels have changed
     public void update() {
-        mis.newPixels(0, 0, width, height);
+	mis.newPixels(0, 0, width, height);
     }
 
     // pack color value into and int with the format 0xFFRRGGBB

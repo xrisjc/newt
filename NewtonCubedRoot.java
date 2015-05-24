@@ -1,10 +1,8 @@
 /*  
- *  $Id: NewtonCubedRoot.java,v 1.3 2003/12/28 03:46:13 chris Exp $
- *
  *  Implementation of the interface Fractal the calculates
  *  the Newton Basin for the function f(z)=z^3-1.
  *
- *  Copyright (C) 2003 Christopher Cowan
+ *  Copyright (C) 2003-2015 Christopher Cowan
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -19,20 +17,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- *  Version: $Revision: 1.3 $
- *
- *  Revision History:
- *  $Log: NewtonCubedRoot.java,v $
- *  Revision 1.3  2003/12/28 03:46:13  chris
- *  Changed the default iteration color to black and added
- *  the DEFAULT_TOLERANCE constant.
- *
- *  Revision 1.2  2003/10/15 00:52:42  christophercowan
- *  Made tolerance modifiable and added some comments.
- *
- *  Revision 1.1  2003/09/26 21:07:28  christophercowan
- *  Initial revision
  *
  */
 public class NewtonCubedRoot implements Fractal {
@@ -102,17 +86,4 @@ public class NewtonCubedRoot implements Fractal {
 
         return x * x + y * y < tolerance;
     }
-
-    public int getColor(int itr) {
-        double angle = 0.2 * itr;
-
-        int red = 100;
-
-        int green =(int) (64 * (Math.cos(angle) + 1)) + 50;
-
-        int blue = (int) (64 * (Math.sin(angle) + 1)) + 50;
-
-        return PixelBuffer.rgb(red, green, blue);
-    }
-    
 }

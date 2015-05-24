@@ -71,19 +71,4 @@ class MandelbrotSet implements Fractal {
     public boolean iterationStop() {
         return rSq + iSq > bound;
     }
-
-
-    public int getColor(int itr) {
-        double angle = 0.2 * itr;
-
-        int red = 100;
-
-        int green =(int) (64 * (Math.cos(angle) + 1)) + 50;
-
-        int blue = (int) (64 * (Math.sin(angle) + 1)) + 50;
-
-        return PixelBuffer.rgb(red, green, blue);
-    }
-    
-
 }

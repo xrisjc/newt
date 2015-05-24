@@ -1,9 +1,7 @@
 /*  
- *  $Id: Newt.java,v 1.3 2003/12/28 03:48:25 chris Exp $
- *
  *  Implements the UI for the program Newt.
  *
- *  Copyright (C) 2003 Christopher Cowan
+ *  Copyright (C) 2003-2015 Christopher Cowan
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -18,21 +16,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- *  Version: $Revision: 1.3 $
- *
- *  Revision History:
- *  $Log: Newt.java,v $
- *  Revision 1.3  2003/12/28 03:48:25  chris
- *  Cleaned up the Fractal Generator Settings Dialog box and
- *  added a lot of static final constants for things like labels
- *  for GUI widgets and default numerical values.
- *
- *  Revision 1.2  2003/12/25 04:18:29  chris
- *  Added the Fractal Generator Settings Dialog Box.
- *
- *  Revision 1.1  2003/09/26 20:59:03  christophercowan
- *  Initial revision
  *
  */
 

@@ -1,6 +1,4 @@
 /*  
- *  $Id: AMSJulia.java,v 1.1 2003/12/25 04:16:32 chris Exp $
- *
  *  Implementation of the interface Fractal the calculates
  *  a Julia sets based on some I saw in the Notices of the
  *  American Mathematical Society. The function is
@@ -10,7 +8,7 @@
  *  where c is a real number.
  *
  *
- *  Copyright (C) 2003 Christopher Cowan
+ *  Copyright (C) 2003-2015 Christopher Cowan
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -26,13 +24,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *  Version: $Revision: 1.1 $
- *
- *  Revision History:
- *  $Log: AMSJulia.java,v $
- *  Revision 1.1  2003/12/25 04:16:32  chris
- *  Initial revision
- *
  */
 
 public class AMSJulia implements Fractal {
@@ -42,8 +33,7 @@ public class AMSJulia implements Fractal {
     private double re, im;
     private double reSq, imSq, reSqMinusImSq;
 
-    public AMSJulia(double c, double bound)
-    {
+    public AMSJulia(double c, double bound) {
         this.c = c;
 	this.bound = bound;
 
@@ -87,16 +77,4 @@ public class AMSJulia implements Fractal {
     public boolean iterationStop() {
         return reSq + imSq > bound;
     }
-
-    public int getColor(int itr) {
-        double angle = 0.5 * itr;
-
-        int blue = 0;
-
-        int green =(int) (64 * (Math.cos(angle) + 1)) + 50;
-
-        int red  = (int) (64 * (Math.sin(angle) + 1)) + 50;
-
-        return PixelBuffer.rgb(red, green, blue);
-    }    
 }

@@ -1,6 +1,4 @@
 /*  
- *  $Id: FractalGenerator.java,v 1.4 2003/12/25 04:17:33 chris Exp $
- *
  *  FractalGenerator iterates over the complex plane and generates
  *  a fractal image. The image genertion is performed in a seperate
  *  thread.
@@ -21,23 +19,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *  Version: $Revision: 1.4 $
- *
- *  Revision History:
- *  $Log: FractalGenerator.java,v $
- *  Revision 1.4  2003/12/25 04:17:33  chris
- *  Added some accessor functions.
- *
- *  Revision 1.3  2003/09/30 02:16:43  christophercowan
- *  Added some comments, a little cleaning up of the code.
- *
- *  Revision 1.2  2003/09/26 21:15:42  christophercowan
- *  Fixed some problem with an import statement that broke
- *  the compilation.
- *
- *  Revision 1.1  2003/09/26 21:10:50  christophercowan
- *  Initial revision
- *
  */
 
 import java.awt.*;
@@ -56,6 +37,8 @@ public class FractalGenerator extends Plane implements Runnable {
     // maximum number of iterations to perform at a point
     private int maxItr;
 
+    private ColorScheme colorScheme;
+
 
     // constructor
     public FractalGenerator(double minX, double maxX, double minY, double maxY,
@@ -69,6 +52,7 @@ public class FractalGenerator extends Plane implements Runnable {
 	fractal = null;
 	
         this.maxItr = maxItr;
+	this.colorScheme = new ColorSchemeCool();
         
 	// add event handlers
 	addMouseListener(new Handler());
@@ -103,7 +87,7 @@ public class FractalGenerator extends Plane implements Runnable {
                         fractal.iterationCalculation();
                         
                         if (fractal.iterationStop()) {
-                            color = fractal.getColor(itr);
+                            color = colorScheme.getColor(itr);
                             break;
                         }
                     }
